@@ -1,3 +1,70 @@
 baseURL = "https://github.com/gongluck/gongluck.github.io"
 languageCode = "en-us"
 title = "gongluck's personal blog"
+
+paginate = "10" # Number of posts per page
+theme = "mainroad"
+disqusShortname = "" # Enable Disqus comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+
+[Author] # Used in authorbox
+  name = "gongluck"
+  bio = "gongluck is just a code porter."
+  avatar = ""
+
+[Params]
+  subtitle = "gongluck的个人博客" # Subtitle of your site. Used in site header
+  description = "gongluck's Personal blog about everything" # Site description. Used in meta description
+  copyright = "gongluck" # Footer copyright holder, otherwise will use site title
+  opengraph = true # Enable OpenGraph if true
+  twitter_cards = true # Enable Twitter Cards if true
+  readmore = true # Show "Read more" button in list if true
+  authorbox = true # Show authorbox at bottom of pages if true
+  toc = true # Enable Table of Contents
+  post_navigation = true # Show post navigation at bottom of pages if true
+  post_meta = ["date", "categories", "translations"] # Order of post meta information
+  mainSections = ["default", "post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
+  dateformat = "2006-01-02" # Change the format of dates
+  mathjax = true # Enable MathJax
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
+  highlightColor = "#e22d30" # Override highlight color
+  customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = true # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  tags_counter = true # Enable counter for each tag in "Tags" widget
+
+[Params.widgets.social]
+  # Enable parts of social widget
+  #facebook = "username"
+  #twitter = "username"
+  #instagram = "username"
+  #linkedin = "username"
+  #telegram = "username"
+  github = "gongluck"
+  #gitlab = "username"
+  #bitbucket = "username"
+  email = "1039994845@qq.com"
+
+# Custom social links
+[[Params.widgets.social.custom]]
+  title = "CSDN"
+  url = "https://blog.csdn.net/gongluck93"
+  icon = "" # Optional. Path relative to "layouts/partials"
+[[Params.widgets.social.custom]]
+  title = "CNBLOG"
+  url = "https://www.cnblogs.com/gongluck/"
+  icon = "" # Optional. Path relative to "layouts/partials"
+
+[[Params.widgets.social.custom]]
+  title = "My Home Page"
+  url = "https://gongluck.github.io/"
