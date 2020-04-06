@@ -1,3 +1,4 @@
+git clone https://github.com/vimux/mainroad
 hugo --theme=mainroad --baseUrl="https://gongluck.github.io" --buildDrafts
 cd public
 git init
