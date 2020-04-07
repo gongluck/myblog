@@ -32,6 +32,10 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   customCSS = ["css/custom.css"] # Include custom CSS files
   customJS = ["js/custom.js"] # Include custom JS files
 
+  # busuanzi
+  busuanzi = true
+  busuanzi_site_offset = 100000
+
 [Params.sidebar]
   home = "right" # Configure layout for home page
   list = "left"  # Configure layout for list pages
