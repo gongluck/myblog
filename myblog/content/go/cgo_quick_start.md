@@ -7,6 +7,7 @@ categories:
   - "go"
 tags:
   - "go"
+  - "cgo"
 menu : side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
@@ -19,7 +20,8 @@ mathjax: true # Enable MathJax for specific page
 ---
 
 C/C++加上GO代表什么？
-代表着既可以使用GO快速的开发项目,并且可以接纳C/C++的庞大历史遗产和极高性能！
+
+代表着既可以使用GO快速的开发项目,同时可以接纳C/C++的庞大历史遗产和极高性能！而且在GO中使用C/C++十分简单！
 
 <!--more-->
 
