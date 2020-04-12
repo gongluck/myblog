@@ -30,7 +30,7 @@ mathjax: true # Enable MathJax for specific page
 https://github.com/gongluck/CGO-DEMO.git
 
 ### GO使用C静态库
-首先把下面的C代码编译从静态库
+首先把下面的C代码编译成静态库
 ```
 int number_add_mod(int a, int b, int mod);
 ```
@@ -62,6 +62,24 @@ func main() {
 }
 ```
 ***#cgo*** 注释中通过 ***CFLAGS*** 和 ***LDFLAGS*** 指定头文件包含路径和静态库的路径。基本和使用 ***gcc*** 差别不大。
+
+如果是VC环境,创建number.def文件说明导出函数的信息
+```
+LIBRARY number.lib
+
+EXPORTS
+number_add_mod
+```
+进入VC对应的命令行环境执行
+```
+cl /c number.c
+link /LIB /OUT:number.lib number.obj /DEF:number.def
+```
+使用mingw工具执行
+```
+dlltool -dllname number.lib --def number.def --output-lib libnumber.a
+```
+得到了 ***libnumber.a*** 文件。GO使用lib需要这个 ***libnumber.a*** 作为代替。
 
 ### GO使用C动态库
 gcc环境使用下面的命令编译动态库
