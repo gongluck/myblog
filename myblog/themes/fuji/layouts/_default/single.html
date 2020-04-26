@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article>
+    <h4 id="post-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h4>
+    <div id="post-meta">
+        {{ partial "post-meta.html" . }}
+    </div>
+    {{ with .Params.playerURL }}
+    <div id="post-aplayer"></div>
+    {{ end }}
+    <div class="markdown-body" id="post-content">
+        {{ .Content }}
+    </div>
+</article>
+{{ if ne .Params.noLicense true }}
+<div class="markdown-body" id="license">
+    <blockquote>
+        <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}" target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}</p>
+    </blockquote>
+</div>
+{{ end }}
+{{ partial "comment-utterances.html" . }}
+{{ partial "comment-disqus.html" . }}
+{{ end }}

@@ -1,0 +1,49 @@
+// colors
+$color-primary: #8AA2D3 !default; // https://irocore.com/aofuji/
+$color-primary-dark: #3B469B !default; // https://irocore.com/aomurasaki/
+$color-secondary: #8F82BC !default; // https://irocore.com/fujimurasaki/
+$color-mute: #9EA1A3 !default; // https://irocore.com/suzu-iro/
+$color-spliter: #E5E2E4 !default; // https://irocore.com/komachinezu/
+
+// spliter css
+$spliter: 1px solid $color-spliter;
+
+// font size list
+$font-size-logo: 2.5em; // Logo Only
+$font-size-l1: 1.75em; // Primer CSS H1
+$font-size-l2: 1.5em; // Primer CSS H2
+$font-size-l3: 1.25em; // Primer CSS H3
+$font-size-l4: 1em; // Primer CSS H4 & Normal Text
+
+// link color mixin
+@mixin link-primary {
+    a {
+        color: $color-primary;
+    }
+
+    a:hover {
+        color: $color-secondary;
+        text-decoration: none;
+    }
+}
+
+@mixin link-secondary {
+    a {
+        color: $color-secondary;
+    }
+
+    a:hover {
+        color: $color-primary-dark;
+        text-decoration: none;
+    }
+}
+
+// title css which also used in 404
+@mixin pdsans-title {
+    font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, Arial, monospace;
+    font-weight: 700;
+    font-size: $font-size-logo;
+    white-space: nowrap;
+    display: block;
+    color: $color-primary;
+}

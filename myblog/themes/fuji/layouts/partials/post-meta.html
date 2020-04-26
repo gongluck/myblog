@@ -1,0 +1,15 @@
+<span>
+    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time> |
+</span>
+<span>
+    <span>{{ .WordCount }}{{ i18n "postMetaWordCount" }}</span> |
+</span>
+<span>
+    {{ if .Params.tags }}
+    {{ range .Params.tags }}
+    <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>
+    {{ end }}
+    {{ else }}
+    <span>{{ i18n "postMetaNoTag" }}</span>
+    {{ end }}
+</span>

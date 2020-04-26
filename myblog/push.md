@@ -1,4 +1,5 @@
-git submodule add -f https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
+rm themes
+git clone https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 hugo server -t fuji --buildDrafts
 hugo --theme=fuji --baseUrl="https://gongluck.github.io" --buildDrafts
 cd public
