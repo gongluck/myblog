@@ -2,26 +2,20 @@
 title: "CGO入门"
 date: 2020-04-09T19:31:36+08:00
 draft: true
-description : ""
+
 categories:
   - "go"
 tags:
   - "go"
   - "cgo"
-menu : side # Optional, add page to a menu. Options: main, side, footer
 
-# Theme-Defined params
-thumbnail: "img/cgo.jpg" # Thumbnail image
-lead: "" # Lead text
-comments: true # Enable Disqus comments for specific page
-authorbox: true # Enable authorbox for specific page
-toc: true # Enable Table of Contents for specific page
-mathjax: true # Enable MathJax for specific page
 ---
 
 C/C++加上GO代表什么？
 
 代表着既可以使用GO快速的开发项目,同时可以接纳C/C++的庞大历史遗产和极高性能！而且在GO中使用C/C++十分简单！
+
+![](../../img/cgo.jpg)
 
 <!--more-->
 

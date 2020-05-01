@@ -2,7 +2,7 @@
 title: "CGO导入导出C静态库/动态库"
 date: 2020-04-12T13:50:36+08:00
 draft: true
-description : ""
+
 categories:
   - "go"
 
@@ -10,19 +10,11 @@ tags:
   - "go"
   - "cgo"
 
-menu : side # Optional, add page to a menu. Options: main, side, footer
-
-# Theme-Defined params
-
-thumbnail: "img/cgo.jpg" # Thumbnail image
-lead: "" # Lead text
-comments: true # Enable Disqus comments for specific page
-authorbox: true # Enable authorbox for specific page
-toc: true # Enable Table of Contents for specific page
-mathjax: true # Enable MathJax for specific page
 ---
 
 可以直接使用C源码到GO中当然是最好不过了,但如果只有三方库的静态库或者动态库,就要学会如何在GO中使用C的静态库或者动态库了。
+
+![](../../img/cgo.jpg)
 
 <!--more-->
 

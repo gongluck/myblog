@@ -2,26 +2,20 @@
 title: "字符动画播放器,不止BadApple!"
 date: 2020-04-07T12:42:47+08:00
 draft: true
-description : "控制台播放BadApple"
+
 categories:
   - "cpp"
 tags:
   - "cpp"
   - "BadApple"
-menu : side # Optional, add page to a menu. Options: main, side, footer
 
-# Theme-Defined params
-thumbnail: "img/BadApple-console.jpg" # Thumbnail image
-lead: "控制台播放BadApple" # Lead text
-comments: true # Enable Disqus comments for specific page
-authorbox: true # Enable authorbox for specific page
-toc: true # Enable Table of Contents for specific page
-mathjax: true # Enable MathJax for specific page
 ---
 
 有屏幕的地方就有BadApple!在B站看过好多版本,于是我也用控制台做了一个。网上很多人都是直接显示bmp图片的,但我这个版本是用libvlc实时解码和播放的,音频用libvlc播放,画面就是转换成字符后输出到控制台。除了BadApple这种黑白动画,也能播放彩色视频。具体可以看一下效果视频。
 
 <!--more-->
+
+![](../../img/BadApple-console.jpg)
 
 ### 设计思路
 libvlc解码转码出RGBA和播放音频，再将RGBA量化为黑('*')白(' ')两个颜色并输出到屏幕。
