@@ -239,3 +239,31 @@ cmake -S . -B ./build -DUSESUBMODULE=ON
 cmake -S . -B ./build -DUSESUBMODULE=OFF
 ```
 ![cmake_build3.PNG](../../img/cmake_build3.PNG)
+
+### 安装
+**CMakeLists.txt**的***install***命令：
+```CMake
+# 安装目标文件
+install(TARGETS [名称] DESTINATION [目录])
+# 安装普通文件
+install(FILES [名称] DESTINATION [目录])
+```
+主模块和子模块的**CMakeLists.txt**分别添加对应的***install***命令：
+```CMake
+# 指定安装路径
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+install(FILES "${PROJECT_BINARY_DIR}/config.h" DESTINATION include)
+```
+```CMake
+# 指定库的安装路径
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+install(FILES ${PROJECT_NAME}.h DESTINATION include)
+```
+最后执行：
+```command
+cmake -S ./ -B ./build
+cmake --build ./build --config Release
+cmake --install ./build --config Release --prefix ./install
+```
+***cmake --install ./build***命令就是执行 **./build**目录中项目的安装，***--prefix ./install***参数表示安装到 **./install**目录。
+![cmake_build4.PNG](../../img/cmake_build4.PNG)
