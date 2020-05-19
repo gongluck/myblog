@@ -267,3 +267,46 @@ cmake --install ./build --config Release --prefix ./install
 ```
 ***cmake --install ./build***命令就是执行 **./build**目录中项目的安装，***--prefix ./install***参数表示安装到 **./install**目录。
 ![cmake_build4.PNG](../../img/cmake_build4.PNG)
+
+### 测试
+启用测试：
+```CMake
+# 启用测试
+enable_testing()
+```
+添加测试使用：
+```CMake
+add_test(NAME [测试名] COMMAND [测试执行命令及参数] WORKING_DIRECTORY [工作目录])
+set_tests_properties([测试名] PROPERTIES PASS_REGULAR_EXPRESSION [匹配输出])
+```
+主模块**CMakeLists.txt**添加：
+```CMake
+# 分别设置了Debug版本和Release版本可执行文件的输出目录
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin) 
+
+# 分别设置了Debug版本和Release版本库文件的输出目录
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/lib) 
+
+# 定义一个宏，用来简化测试工作
+macro(do_test mycommand myret)
+add_test(NAME test_${mycommand}_${myret} COMMAND ${mycommand} WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+# 检查测试输出是否包含"${myret}"
+set_tests_properties(test_${mycommand}_${myret} PROPERTIES PASS_REGULAR_EXPRESSION ${myret})
+endmacro(do_test)
+
+# 启用测试
+enable_testing()
+
+# 测试程序
+do_test(mydemo "cmake")
+```
+执行命令编译和测试：
+```Command
+cmake -S ./ -B ./build
+cmake --build ./build --config Release
+cd ./build
+ctest --force-new-ctest-process -C Release
+```
+![cmake_build5.PNG](../../img/cmake_build5.PNG)
