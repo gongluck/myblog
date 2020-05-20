@@ -356,3 +356,25 @@ cmake -S ./ -B ./build
 ****很不幸，生成Visual Studio工程时，printf函数总是找不到，但puts这类却是可以找到****
 ![cmake_build6.PNG](../../img/cmake_build6.PNG)
 ![cmake_build7.PNG](../../img/cmake_build7.PNG)
+
+### 添加版本号
+主模块**CMakeLists.txt**添加：
+```CMake
+# 添加版本号
+set(VERSION_MAJOR 1)
+set(VERSION_MINOR 0)
+```
+**config.h.in**添加：
+```CMake
+#define VERSION_MAJOR @VERSION_MAJOR@
+#define VERSION_MINOR @VERSION_MINOR@
+```
+这样生成的**config.h**文件中就会增加：
+```C++
+#define VERSION_MAJOR 1
+#define VERSION_MINOR 0
+```
+在**main.c**中就可以直接使用版本号：
+```C++
+printf("hello, cmake!version:%d.%d\n", VERSION_MAJOR, VERSION_MINOR);
+```
