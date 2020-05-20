@@ -310,3 +310,49 @@ cd ./build
 ctest --force-new-ctest-process -C Release
 ```
 ![cmake_build5.PNG](../../img/cmake_build5.PNG)
+
+### 函数检查
+主模块**CMakeLists.txt**添加：
+```CMake
+# 添加函数检查功能
+include(CheckFunctionExists)   
+check_function_exists(printf HAVEPRINTF)
+if(HAVEPRINTF)
+  # 添加宏定义
+  add_definitions(-DHAVEPRINTF)
+endif()
+```
+检查***printf***函数并且定义***HAVEPRINTF***宏。
+**main.c**也需要调整：
+```C++
+#include "config.h"
+#include <stdio.h>
+
+#ifdef USESUBMODULE
+#include "myfun.h"
+#endif//USESUBMODULE
+
+int main()
+{
+    printf("hello, cmake!\n");
+
+#ifdef USESUBMODULE
+    printf("1+1=%d\n", myfun(1, 1));
+#endif//USESUBMODULE
+
+#ifdef HAVEPRINTF
+    puts("found printf.");
+#else
+    puts("not found printf.");
+#endif//HAVEPRINTF
+
+    return 0;
+}
+```
+执行命令生成：
+```Command
+cmake -S ./ -B ./build
+```
+****很不幸，生成Visual Studio工程时，printf函数总是找不到，但puts这类却是可以找到****
+![cmake_build6.PNG](../../img/cmake_build6.PNG)
+![cmake_build7.PNG](../../img/cmake_build7.PNG)
