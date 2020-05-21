@@ -1,5 +1,5 @@
-hugo server -t fuji --buildDrafts
-hugo --theme=fuji --baseUrl="https://gongluck.github.io" --buildDrafts
+hugo server -t diary --buildDrafts
+hugo --theme=diary --baseUrl="https://gongluck.github.io" --buildDrafts
 cd public
 git init
 git add .

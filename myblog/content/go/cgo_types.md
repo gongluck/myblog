@@ -1,22 +1,15 @@
 ---
 title: "CGO类型转换"
 date: 2020-04-11T12:09:14+08:00
-draft: true
+draft: false
 
-categories:
-  - "go"
-
-tags:
-  - "go"
-  - "cgo"
-
-menu : side # Optional, add page to a menu. Options: main, side, footer
+featured_image: "img/cgo.jpg"
+categories: go
+tags: [go, cgo]
 
 ---
 
 由于CGO和C的数据类型不是完全等价匹配, 所有在使用CGO的过程中需要做类型转换。
-
-![](../../img/cgo.jpg)
 
 <!--more-->
 

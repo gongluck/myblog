@@ -1,95 +1,56 @@
 baseURL = "https://gongluck.github.io/"
-title = "gongluck's personal blog"
-theme = "fuji"
-hasCJKLanguage = true
-enableEmoji = true
-enableRobotsTXT = true
-disableKinds = ["RSS", "taxonomyTerm"]
-
-## Change this two to switch between different language
-## Now support: en, zh-hans, zh-hant, ja
-defaultContentLanguage = "en"
-languageCode = "en"
-
-summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
-paginate = 10
-
-# googleAnalytics = "UA-163347799-1" # Set your Google Analytics UA here, or comment out to disable
-
-[permalinks]
-  post = "/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
+title = "gongluck's blog"
+theme = "diary"
 
 [params]
   author = "gongluck" # You can also set author in post front matter individually
   subTitle = "C/C++ Win32/MFC Qt Golang"
-
-  # Open Graph & Twitter Card variables
-  # You can also set description and images in post front matter individually
-  description = "A minimal hugo theme powered by Primer CSS."
-  images = ["img/og.png"] # This will use the image called og.png in static/img folder
-
-  # Posts shown in homepage
-  mainSections = ["default", "cpp", "go", "cmake"]
-
-  # Bangumi image chart id
-  # bgmImageChart = "000000"
-
-  # Show scroll to top button
-  scrollTop = true
-
-  # License
-  license = "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)"
-  licenseLink = "http://creativecommons.org/licenses/by-nc-sa/4.0/"
-
-  # Comments
-  # utterances, see: https://utteranc.es/
-  # utterancesRepo = "[ENTER REPO HERE]"
-  # utterancesIssueTerm = "pathname"
-  # utterancesTheme = "github-light"
-
-  # Disqus, see: https://disqus.com/admin/install/platforms/universalcode/
-  # disqusComment = false
-  # disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
-
-  # Custom lazyload placeholder
-  # 16:9
-  cdnLazyPlaceholder = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x270.svg"
-  # 32:9
-  cdnLazyPlaceholderRow = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_960x270.svg"
-  # 8:9
-  cdnLazyPlaceholderCol = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x540.svg"
-
-  # enable this to fetch css & js from jsDelivr CDN
-  useCDN = true
-
-  # site global fixed mode aplayer 
-  # playerName = "..." # Audio title or name
-  # playerArtist = "..." # Audio artist
-  # playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
-  # playerCover = "..." # Audio cover
+  enableGitalk = true
 
 [markup]
   [markup.highlight]
-    style = "monokailight"
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "perldoc"
+    tabWidth = 4
 
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 1
-
+[params.gitalk]
+  owner = "gongluck"
+  repo = "blogtalk"
+  client_id = "49c0a21d9340c4049e72"
+  client_secret = "6a22a79ca072e86728e6b1385927d1ec92f3d4a8"
 [taxonomies]
-  tag = "tags"
+   tag = "tags"
+   category = "categories"
 
-[menu]
-  [[menu.nav]]
-    name = "Home"
-    url = "/"
-    weight = 1
+[[menu.main]]
+url = "/categories"
+name = "Categories"
+weight = 1
+[[menu.main]]
+url = "/tags"
+name = "Tags"
+weight = 2
 
-  [[menu.link]]
-    name = "GitHub"
-    url = "https://github.com/gongluck"
-    weight = 1
-  [[menu.link]]
-    name = "bilibili"
-    url = "https://space.bilibili.com/39121604"
-    weight = 2
+[[menu.main]]
+url = "https://github.com/gongluck"
+name = "Github"
+weight = 3
+[[menu.main]]
+url = "https://blog.csdn.net/gongluck93"
+name = "CSDN"
+weight = 3
+[[menu.main]]
+url = "https://www.cnblogs.com/gongluck/"
+name = "CNBLOG"
+weight = 3
+
+[[menu.main]]
+url = "/index.xml"
+name = "RSS Feed"
+weight = 10

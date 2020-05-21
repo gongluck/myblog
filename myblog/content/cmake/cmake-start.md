@@ -1,21 +1,17 @@
 ---
 title: "CMake入门"
 date: 2020-05-17T14:17:09+08:00
-draft: true
+draft: false
 
-categories:
-  - "cmake"
-tags:
-  - "cmake"
-  - "cpp"
+featured_image: "img/cmake-start-index.jpg"
+categories: cmake
+tags: [cmake, cpp]
 
 ---
 
 **CMake**是一个跨平台的安装(编译)工具，可以用简单的语句来描述所有平台的安装(编译过程)。能够输出各种各样的**makefile**或者**project**文件，能测试编译器所支持的**C++**特性,类似**UNIX**下的**automake**。只是 **CMake**的组态档取名为**CMakeLists.txt**。**Cmake**并不直接建构出最终的软件，而是产生标准的建构档(如 **Unix**的**Makefile**或**Windows Visual C++**的**projects/workspaces**)，然后再依一般的建构方式使用。这使得熟悉某个集成开发环境(IDE)的开发者可以用标准的方式建构他的软件，这种可以使用各平台的原生建构系统的能力是**CMake**和**SCons**等其他类似系统的区别之处。
 
 至于出现一份代码，到处编译，但是编译不过就有可能是代码的问题了。
-
-![](../../img/cmake-start-index.jpg)
 
 <!--more-->
 
@@ -55,7 +51,7 @@ cmake --build ./build
 ```
 第一条命令是生成目标平台的项目，将生成使用系统上默认的编译套件的工程。***-S***后面的参数是**CMake**工程**CMakeLists.txt**文件所在目录，***-B***后面的参数是将要生成的目标平台项目文件存放的目录。
 第二条命令是构建项目，当然也可以通过其他工具打开项目构建或者执行***make***命令等。***--build***是**CMake**程序构建的命令，后面的参数是需要构建的项目的路径。
-![cmake_build.jpg](../../img/cmake_build.jpg)
+![cmake_build.jpg](/img/cmake_build.jpg)
 
 ### 增加子模块
 创建目录**myfun**，再在**myfun**目录中创建**CMakeLists.txt**、**myfun.h**和**myfun.c**三个文件。
@@ -152,7 +148,7 @@ target_link_libraries(${PROJECT_NAME} ${SUBMODULE})
 ```
 ***add_subdirectory***命令添加子模块目录，**CMake**会自动执行子模块中的**CMakelists.txt**。
 ***target_link_libraries***命令是将子模块链接到主模块。
-![cmake_build2.PNG](../../img/cmake_build2.PNG)
+![cmake_build2.PNG](/img/cmake_build2.PNG)
 
 ### 自定义编译选项
 主模块的**CMakelists.txt**修改成：
@@ -238,7 +234,7 @@ cmake -D[宏名]=[宏值]
 cmake -S . -B ./build -DUSESUBMODULE=ON
 cmake -S . -B ./build -DUSESUBMODULE=OFF
 ```
-![cmake_build3.PNG](../../img/cmake_build3.PNG)
+![cmake_build3.PNG](/img/cmake_build3.PNG)
 
 ### 安装
 **CMakeLists.txt**的***install***命令：
@@ -266,7 +262,7 @@ cmake --build ./build --config Release
 cmake --install ./build --config Release --prefix ./install
 ```
 ***cmake --install ./build***命令就是执行 **./build**目录中项目的安装，***--prefix ./install***参数表示安装到 **./install**目录。
-![cmake_build4.PNG](../../img/cmake_build4.PNG)
+![cmake_build4.PNG](/img/cmake_build4.PNG)
 
 ### 测试
 启用测试：
@@ -309,7 +305,7 @@ cmake --build ./build --config Release
 cd ./build
 ctest --force-new-ctest-process -C Release
 ```
-![cmake_build5.PNG](../../img/cmake_build5.PNG)
+![cmake_build5.PNG](/img/cmake_build5.PNG)
 
 ### 函数检查
 主模块**CMakeLists.txt**添加：
@@ -354,8 +350,8 @@ int main()
 cmake -S ./ -B ./build
 ```
 ****很不幸，生成Visual Studio工程时，printf函数总是找不到，但puts这类却是可以找到****
-![cmake_build6.PNG](../../img/cmake_build6.PNG)
-![cmake_build7.PNG](../../img/cmake_build7.PNG)
+![cmake_build6.PNG](/img/cmake_build6.PNG)
+![cmake_build7.PNG](/img/cmake_build7.PNG)
 
 ### 添加版本号
 主模块**CMakeLists.txt**添加：

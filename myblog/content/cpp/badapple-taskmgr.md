@@ -1,19 +1,15 @@
 ---
 title: "任务管理器播放BadApple"
 date: 2020-04-08T18:28:36+08:00
-draft: true
+draft: false
 
-categories:
-  - "cpp"
-tags:
-  - "cpp"
-  - "BadApple"
+featured_image: "img/BadApple-taskmgr.jpg"
+categories: cpp
+tags: [cpp, BadApple]
 
 ---
 
 有屏幕的地方就有BadApple!前面做了在控制台显示BadApple了,这一次把画面渲染到任务管理器上！
-
-![](../../img/BadApple-taskmgr.jpg)
 
 <!--more-->
 

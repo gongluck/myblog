@@ -1,20 +1,15 @@
 ---
 title: "CGO导入导出C静态库/动态库"
 date: 2020-04-12T13:50:36+08:00
-draft: true
+draft: false
 
-categories:
-  - "go"
-
-tags:
-  - "go"
-  - "cgo"
+featured_image: "img/cgo.jpg"
+categories: go
+tags: [go, cgo]
 
 ---
 
 可以直接使用C源码到GO中当然是最好不过了,但如果只有三方库的静态库或者动态库,就要学会如何在GO中使用C的静态库或者动态库了。
-
-![](../../img/cgo.jpg)
 
 <!--more-->
 

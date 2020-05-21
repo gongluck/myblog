@@ -1,21 +1,17 @@
 ---
 title: "CGO入门"
 date: 2020-04-09T19:31:36+08:00
-draft: true
+draft: false
 
-categories:
-  - "go"
-tags:
-  - "go"
-  - "cgo"
+featured_image: "img/cgo.jpg"
+categories: go
+tags: [go, cgo]
 
 ---
 
 C/C++加上GO代表什么？
 
 代表着既可以使用GO快速的开发项目,同时可以接纳C/C++的庞大历史遗产和极高性能！而且在GO中使用C/C++十分简单！
-
-![](../../img/cgo.jpg)
 
 <!--more-->
 
