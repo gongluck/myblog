@@ -374,3 +374,26 @@ set(VERSION_MINOR 0)
 ```C++
 printf("hello, cmake!version:%d.%d\n", VERSION_MAJOR, VERSION_MINOR);
 ```
+
+### 制作安装包
+主模块**CMakeLists.txt**添加：
+```CMake
+# 构建一个CPack安装包
+include(InstallRequiredSystemLibraries)
+# 设置安装包版本号
+set(CPACK_PACKAGE_VERSION_MAJOR "${VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${VERSION_MINOR}")
+include(CPack)
+```
+依次执行以下命令即可生成安装包：
+```Command
+cmake -S . -B ./build
+cmake --build ./build --config Release
+cpack --config ./build/CPackConfig.cmake -B E:\Code\CMAKE-DEMO\mydemo\package -C Release
+cpack --config ./build/CPackSourceConfig.cmake -B E:\Code\CMAKE-DEMO\mydemo\package -C Release
+```
+***cpack***命令的参数 ***-B***后面是的安装包的生成目录，需要绝对路径。
+![cmake_build7.PNG](/img/cmake_build8.PNG)
+
+### 最后
+**CMake**、**CTest**和**CPack**的基本使用基本就这些了，生成工程、编译、测试、安装、制作包都基本使用到了。每个命令还有很多可选的功能没有提到，等以后需要再做补充。
