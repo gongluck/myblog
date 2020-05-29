@@ -1,6 +1,7 @@
 baseURL = "https://gongluck.github.io/"
 title = "gongluck's blog"
 theme = "diary"
+googleAnalytics = "UA-163347799-1"
 
 [params]
   author = "gongluck" # You can also set author in post front matter individually
