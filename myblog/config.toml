@@ -1,4 +1,4 @@
-baseURL = "https://gongluck.github.io/"
+#baseURL = "https://gongluck.github.io/"
 title = "gongluck's blog"
 theme = "diary"
 googleAnalytics = "UA-163347799-1"
