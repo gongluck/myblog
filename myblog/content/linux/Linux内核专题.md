@@ -10,6 +10,10 @@ tags: [linux]
 
 ## 十一、Linux内核专题
 
+### 0.项目仓库
+
+- [https://github.com/gongluck/CVIP.git](https://github.com/gongluck/CVIP.git)
+
 ### 1.OpenResty
 
 #### 1.1 简介
